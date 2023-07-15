@@ -1,10 +1,10 @@
-import { User } from "./models/User"
+import { User } from './models/User'
 
 const users = User.findAll()
-console.log({users})
+console.log({ users })
 
 const user = User.findOne({
-  where: 'id = 2'
+  where: 'id = 2',
 })
 console.log({ user })
 
@@ -12,13 +12,13 @@ const userById = User.findById(1)
 console.log({ userById })
 
 User.create({
-  email: "azizah@gmail.com" + Date.now().toString(),
-  password: "123123"
+  email: 'azizah@gmail.com' + Date.now().toString(),
+  password: '123123',
 })
 
 const newUsers = User.findAll()
-console.log({newUsers})
+console.log({ newUsers })
 
 User.delete({
-  where: 'id > 2'
+  where: 'id > 2',
 })

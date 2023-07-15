@@ -1,21 +1,20 @@
-import { Database } from "~/database/Database";
+import { Database } from '~/database/Database'
 
 type Options = {
   where?: string
 }
 
 type FindOptions = {
-  includeAttrs?: string[],
-  excludeAttrs?: string[],
+  includeAttrs?: string[]
+  excludeAttrs?: string[]
 } & Options
 
 type DeleteOptions = Options
 
-export class Model<T extends Object> {
-
+export class Model<T extends object> {
   protected db = Database.getInstance()
 
-  protected table: string = ""
+  protected table: string = ''
 
   protected attributes: string[] = []
 
@@ -48,7 +47,7 @@ export class Model<T extends Object> {
    * Log executed query
    */
   private log(query: string) {
-    console.log("SQL Query:", query)
+    console.log('SQL Query:', query)
   }
 
   /**
@@ -103,7 +102,9 @@ export class Model<T extends Object> {
     const insertedValues = Object.values(record)
     const insertedParams = insertedAttributes.map((_, i) => `?${i + 1}`)
 
-    const sqlQuery = `INSERT INTO ${this.table} (${insertedAttributes.join(', ')}) VALUES (${insertedParams.join(', ')})`
+    const sqlQuery = `INSERT INTO ${this.table} (${insertedAttributes.join(
+      ', ',
+    )}) VALUES (${insertedParams.join(', ')})`
 
     const statement = this.db.prepare(sqlQuery)
 
@@ -124,5 +125,4 @@ export class Model<T extends Object> {
 
     statement.run()
   }
-
 }
