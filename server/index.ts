@@ -1,4 +1,4 @@
-import { User } from './models/User'
+import { IUser, User } from './models/User'
 
 const users = User.findAll()
 console.log({ users })
@@ -11,10 +11,11 @@ console.log({ user })
 const userById = User.findById(1)
 console.log({ userById })
 
-User.create({
+const newUser: IUser = {
   email: 'azizah@gmail.com' + Date.now().toString(),
   password: '123123',
-})
+}
+User.create(newUser)
 
 const newUsers = User.findAll()
 console.log({ newUsers })

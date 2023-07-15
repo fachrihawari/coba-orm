@@ -6,8 +6,10 @@ export interface IUser {
   age?: number
 }
 
-export const User = new (class User extends Model<IUser> {
+class UserModel extends Model<IUser> {
   protected table = 'users'
 
   protected attributes = ['email', 'password', 'age']
-})()
+}
+
+export const User = Object.freeze(new UserModel())
