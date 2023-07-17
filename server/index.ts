@@ -14,6 +14,7 @@ console.log({ userById })
 const newUser: IUser = {
   email: 'azizah@gmail.com' + Date.now().toString(),
   password: '123123',
+  role: 'user'
 }
 User.create(newUser)
 
