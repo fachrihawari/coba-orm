@@ -16,7 +16,7 @@
     "start": "bun run index.ts",
     "lint": "eslint .",
     "format": "eslint . --fix",
-    "migration": "bun run ./database/Migration.ts"
+    "migration": "bun run ./database/migration.ts"
   },
   "type": "module"
 }

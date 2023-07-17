@@ -1,4 +1,4 @@
-import { IUser, User } from './models/User'
+import { IUser, User } from './models/user'
 
 const users = User.findAll()
 console.log({ users })

@@ -2,7 +2,7 @@ import { argv } from 'bun'
 import { readdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import { cwd } from 'node:process'
-import { Database } from './Database'
+import { Database } from './database'
 
 const db = Database.getInstance()
 
